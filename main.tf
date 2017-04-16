@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "remote_state" {
-  bucket = "${var.prefix}_remote_state_${var.environment}"
+  bucket = "${var.prefix}-remote-state-${var.environment}"
   acl    = "authenticated-read"
  
   versioning {
@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "remote_state" {
   }
 
   tags {
-    Name = "${var.prefix}_remote_state_${var.environment}"
+    Name = "${var.prefix}-remote-state-${var.environment}"
     Environment = "${var.environment}"
   }
 }
